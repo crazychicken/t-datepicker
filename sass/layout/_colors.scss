@@ -1,0 +1,70 @@
+a {
+  color: $color-main;
+  &:hover {
+    color: darken($color-main, 10%);
+  }
+}
+
+.navbar-brand {
+  &, &:hover {
+    color: $color-main;
+  }
+}
+
+.item {
+  color: lighten(#5b5b5b, 10%);
+  &:hover, &.active {
+    color: $color-main;
+    &::after {
+      background: $color-main;
+    }
+  }
+}
+
+// Js - add style - block-title
+.active {
+  .item {
+    color: $color-main;
+  }
+  &::after {
+    background: $color-main;
+  }
+}
+.sider-bar,
+.nav-home {
+  li {
+    &::after {
+      background: $color-main;
+    }
+  }
+}
+
+.amp_pre {
+  .btn-copy {
+    background: $color-main;
+  }
+}
+
+// _buttons
+.btn-border {
+  color: $color-main;
+  border-color: $color-main;
+  &:hover {
+    color: darken($color-main, 10%);
+    border-color: darken($color-main, 10%);
+  }
+}
+.btn-main {
+  background: $color-main;
+  &:hover {
+    background-color: darken($color-main, 10%);
+  }
+}
+.ps__thumb-y {
+  background-color: $color-main;
+}
+.ps__rail-y:hover > .ps__thumb-y,
+.ps__rail-y:focus > .ps__thumb-y,
+.ps__rail-y.ps--clicking .ps__thumb-y {
+  background-color: lighten($color-main, 10%);
+}

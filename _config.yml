@@ -1,0 +1,33 @@
+# Dependencies
+markdown:         kramdown
+highlighter:      rouge
+
+kramdown:
+  auto_ids: true
+
+# Permalinks
+permalink:        pretty
+
+gems:
+  - jekyll-redirect-from
+  - jekyll-sitemap
+
+# Social
+title: t-scroll
+description: Library t-datepicker with HTML5, CSS3, Javascript, ES6, ...
+twitter: https://twitter.com/mtu_truong
+authors: Tuds - Crazychicken
+social_logo_path: https://t-datepicker.getqwerty.com/theme/images/favicon.png
+social_image_path: https://t-datepicker.getqwerty.com/theme/images/about-t-datepicker.png
+
+# Custom vars
+current_version:  1.0.0
+repo:             https://github.com/crazychicken/t-datepicker.git
+
+download:
+  source:         https://github.com/crazychicken/t-datepicker/archive/master.zip
+  dist:           https://github.com/crazychicken/t-datepicker/archive/master.zip
+
+blog:             https://t-datepicker.getqwerty.com/documents.html
+expo:             https://t-datepicker.getqwerty.com/
+themes:           https://t-datepicker.getqwerty.com/index.html

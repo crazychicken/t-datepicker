@@ -1,0 +1,123 @@
+/*
+* Tuds tDatepicker
+* Copyright 2018 tuds - crazychicken
+* Licensed under: LICENSE
+* Version: v1.0.0
+*/
+$color-main    : #4DB6AC;
+$label-special : #e91e63;
+$gray-default  : #fafafa;
+$white-default : #fff;
+
+// ### Picker date
+.t-check-in,
+.t-check-out {
+    border-color: darken($gray-default, 5%);
+}
+.t-check-in {
+    border-right-color: darken($gray-default, 7%);
+}
+.t-date-title {
+    color: $label-special;
+}
+
+
+// ### date of table calendar
+// Only no replace
+.t-special-day {
+    &:before {
+        border-color: transparent;
+        border-top-color: $label-special;
+        border-right-color: $label-special;
+    }
+}
+
+.t-datepicker-day {
+    border-color: darken($gray-default, 5%);
+    background: $white-default;
+}
+.t-day, .t-range, .t-start, .t-end, .t-disabled {
+    background: $gray-default;
+    border-color: $white-default;
+}
+.t-disabled {
+    background: transparent;
+}
+.t-highlighted {
+    color: $color-main;
+    &.t-disabled {
+        background: $gray-default;
+    }
+}
+.t-start, 
+.t-end,
+.t-end-limit {
+    color: $white-default;
+    background: $color-main;
+}
+
+.t-range, .t-range-limit {
+    color: $color-main;
+}
+.t-range {
+    background: lighten($color-main, 42%);
+}
+.t-range-limit {
+    background: lighten($color-main, 33%);
+    &.t-start,
+    &.t-end {
+        color: $white-default;
+        background: lighten($color-main, 10%);
+    }
+}
+
+.t-check-in .t-end,
+.t-check-out .t-start,
+.t-check-out tr ~ .t-end {
+    color: $white-default;
+    background: $color-main;
+}
+
+.t-hover-day {
+    // .t-hover-day-content
+    &, &-content, &:hover {
+        color: $white-default;
+        background: lighten($color-main, 10%);
+    }
+    // Arrow
+    &::after {
+        border-color: transparent;
+        border-top-color: lighten($color-main, 10%);
+    }
+}
+// Color t-toDay import more hoverday
+.t-today {
+    &, .t-hover-day-content {
+        background: darken($gray-default, 30%);
+    }
+    &::after {
+        border-top-color: darken($gray-default, 30%);
+    }
+    &:hover {
+        &, & .t-hover-day-content {
+            background: $color-main;
+        }
+        &::after {
+            border-top-color: $color-main;
+        }
+    }
+}
+// Color t-Start important more t-toDay when position t-today
+.t-start.t-today,
+.t-end.t-today {
+    color: $white-default;
+    &, & .t-hover-day-content {
+        background: $color-main;
+    }
+    &::after {
+        border-top-color: $color-main;
+    }
+}
+
+
+

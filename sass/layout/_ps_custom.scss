@@ -1,0 +1,34 @@
+.ps__rail-x,
+.ps__thumb-x {
+  height: 4px;
+  bottom: 0;
+}
+.ps__rail-x,
+.ps__thumb-x,
+.ps__thumb-y {
+  opacity: 1;
+  border-radius: 0;
+}
+// Doc
+.ps__rail-y,
+.ps__thumb-y {
+  width: 4px;
+  left: 0;
+}
+.ps--active-x > .ps__rail-x,
+.ps--active-y > .ps__rail-y {
+  background-color: #f1f1f1;
+}
+// Ngang
+.ps__rail-x:hover > .ps__thumb-x,
+.ps__rail-x:focus > .ps__thumb-x,
+.ps__rail-x.ps--clicking .ps__thumb-x {
+  // background-color: lighten($color-main, 10%);
+  height: 4px;
+}
+.ps__rail-y:hover > .ps__thumb-y,
+.ps__rail-y:focus > .ps__thumb-y,
+.ps__rail-y.ps--clicking .ps__thumb-y {
+  // background-color: lighten($color-main, 10%);
+  width: 4px;
+}

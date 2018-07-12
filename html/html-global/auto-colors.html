@@ -1,0 +1,164 @@
+<div class="auto-colors">
+	<button class="btn btn-toggle">&#x276E;</button>
+	<!-- <button class="btn btn-toggle">&#x276F;</button> -->
+	<button class="btn btn-change-color" data-title="theme-blue.css" title="theme-blue"></button>
+	<button class="btn btn-change-color" data-title="theme-bluegrey.css" title="theme-bluegrey"></button>
+	<button class="btn btn-change-color" data-title="theme-cyan.css" title="theme-cyan"></button>
+
+	<button class="btn btn-change-color" data-title="theme-green.css" title="theme-green"></button>
+	<button class="btn btn-change-color" data-title="theme-lime.css" title="theme-lime"></button>
+	<button class="btn btn-change-color" data-title="theme-orange.css" title="theme-orange"></button>
+
+	<button class="btn btn-change-color" data-title="theme-purple.css" title="theme-purple"></button>
+	<button class="btn btn-change-color" data-title="theme-teal.css" title="theme-teal"></button>
+	<button class="btn btn-change-color" data-title="theme-yellow.css" title="theme-yellow"></button>
+
+	<button class="btn btn-block btn-change-color" data-title="theme-main.css" title="theme-main"></button>
+	<button class="btn btn-block btn-main auto-slider">Auto Slider</button>
+</div>
+
+<script type="text/javascript">
+$(document).ready( function() {
+	// $('link')
+	function changeStyle(pr_el) {
+		var a = 1;
+		var link_href;
+		pr_el.each( function(){
+			link_href = $(this).attr('href');
+			if ( link_href.indexOf('theme-') !== -1 ) {
+				switch(link_href) {
+					// theme-main
+					case link_href = './theme/css/layout-theme/theme-main.css':
+					link_href = link_href.replace('theme-main', 'theme-blue')
+					break;
+
+					// theme-blue
+					case link_href = './theme/css/layout-theme/theme-blue.css':
+					link_href = link_href.replace('theme-blue', 'theme-bluegrey')
+					break;
+
+					// theme-bluegrey
+					case link_href = './theme/css/layout-theme/theme-bluegrey.css':
+					link_href = link_href.replace('theme-bluegrey', 'theme-cyan')
+					break;
+
+					// theme-cyan
+					case link_href = './theme/css/layout-theme/theme-cyan.css':
+					link_href = link_href.replace('theme-cyan', 'theme-green')
+					break;
+
+					// theme-green
+					case link_href = './theme/css/layout-theme/theme-green.css':
+					link_href = link_href.replace('theme-green', 'theme-lime')
+					break;
+
+					// theme-lime
+					case link_href = './theme/css/layout-theme/theme-lime.css':
+					link_href = link_href.replace('theme-lime', 'theme-orange')
+					break;
+
+					// theme-orange
+					case link_href = './theme/css/layout-theme/theme-orange.css':
+					link_href = link_href.replace('theme-orange', 'theme-purple')
+					break;
+
+					// theme-purple
+					case link_href = './theme/css/layout-theme/theme-purple.css':
+					link_href = link_href.replace('theme-purple', 'theme-teal')
+					break;
+
+					// theme-teal
+					case link_href = './theme/css/layout-theme/theme-teal.css':
+					link_href = link_href.replace('theme-teal', 'theme-yellow')
+					break;
+
+					// theme-yellow
+					case link_href = './theme/css/layout-theme/theme-yellow.css':
+					link_href = link_href.replace('theme-yellow', 'theme-main')
+				}
+				$(this).attr('href', link_href)
+
+				// click add style and stop auto slide color
+				$('.btn-change-color').on('click', function(){
+					a = 2
+				})
+			}
+		});
+		
+		setTimeout(function(){
+			if ( a === 1 ) {
+				changeStyle($('link'))
+			}
+		}, 3000)
+	}
+	function offSlider(pr_el) {
+		pr_el.each( function(){
+			var link_href = $(this).attr('href');
+			var _this = $(this)
+			// setThem follow date of week
+			if ( link_href.indexOf('theme-') !== -1 ) {
+				switch(new Date().getDay()) {
+					// theme-blue
+					case 0:
+					$(this).attr('href', './theme/css/layout-theme/theme-blue.css')
+					break;
+
+					// theme-blue
+					case 1:
+					$(this).attr('href', './theme/css/layout-theme/theme-orange.css')
+					break;
+
+					// theme-bluegrey
+					case 2:
+					$(this).attr('href', './theme/css/layout-theme/theme-teal.css')
+					break;
+
+					// theme-cyan
+					case 3:
+					$(this).attr('href', './theme/css/layout-theme/theme-cyan.css')
+					break;
+
+					// theme-lime
+					case 4:
+					$(this).attr('href', './theme/css/layout-theme/theme-green.css')
+					break;
+
+					// theme-main
+					case 5:
+					$(this).attr('href', './theme/css/layout-theme/theme-main.css')
+					break;
+
+					// theme-orange
+					case 6:
+					$(this).attr('href', './theme/css/layout-theme/theme-purple.css')
+					break;
+				}
+				$('.btn-change-color').on('click', function(){
+					var data_title = $(this).attr('data-title')
+					tuds = link_href.slice(link_href.search('theme-'), link_href.length)
+					data_title = link_href.replace(tuds, data_title)
+					_this.attr('href', data_title)
+				})
+			}
+		})
+	}
+	// Change color selector
+	offSlider($('link'));
+	
+	// changeStyle($('link')); Auto slider
+	$('.auto-slider').on('click', function(){
+		changeStyle($('link'));
+	});
+
+	$('.btn-toggle').on('click', function(){
+		if ( $(this).text() === '❮' ) {
+			$(this).html( '&#x276F;' )
+			$(this).parents('.auto-colors').css('right', 0)
+		} else {
+			$(this).html( '&#x276E;' )
+			$(this).parents('.auto-colors').css('right', -130+'px')
+		}
+	})
+
+})
+</script>

@@ -1,0 +1,42 @@
+@keyframes top_bottom {
+	0% {
+        bottom: 14px;
+    }
+    100% {
+        bottom: 4px;
+    }
+}
+
+@keyframes change_color {
+	0% {
+        color: #ddd;
+    }
+    100% {
+        color: green;
+    }
+}
+
+@keyframes pre_active {
+    0% {
+        bottom: 0;
+        width: 0;
+        height: 0;
+        opacity: 0.75;
+        border-radius: 50%;
+    }
+    50% {
+        bottom: -750px;
+        right: -150px;
+        width: 1500px;
+        height: 1500px;
+        opacity: 0.35;
+    }
+    100% {
+        bottom: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        opacity: 0.75;
+        border-radius: 50%;
+    }
+}

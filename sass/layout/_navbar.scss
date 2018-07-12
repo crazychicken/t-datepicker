@@ -1,0 +1,119 @@
+.navbar {
+	width: 100%;
+	background: #fff;
+	border-bottom: 1px solid #f1f1f1;
+	float: left;
+	clear: both;
+	height: 70px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 99999;
+	&-brand {
+		float: left;
+		font-size: 24px;
+		margin-top: 22px;
+		text-decoration: none;
+	}
+	&-list {
+		float: left;
+		height: 70px;
+		padding: 0;
+		margin: 0;
+		@media ( min-width: 769px ) {
+			display: block !important;
+		}
+	}
+	&-right {
+		float: right;
+	}
+	&-left {
+		margin-left: 105px;
+	}
+	.item {
+		padding: 24px 12px 25px 12px;
+		&:after {
+			content: '';
+			height: 6px;
+			width: 6px;
+			position: absolute;
+			bottom: 14px;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			border-radius: 50%;
+			// animation
+			animation-name: top_bottom;
+			animation-duration: 0.75s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+		}
+	}
+	.item-dash {
+		margin: 0 5px;
+		border-right: 1px solid #ddd;
+	}
+	.container {
+		float: left;
+		width: 100%;
+		padding: 0 30px;
+	}
+}
+.btn-navigation {
+	position: absolute;
+	right: 15px;
+	top: 17px;
+	padding: 0 1px;
+	text-align: center;
+	padding: 0;
+	&-line {
+		height: 1px;
+		width: 26px;
+		background: #ddd;
+		display: block;
+		margin: 7px 0;
+		position: relative;
+		transition: all 0.25s linear;
+	}
+}
+// js open navigation
+.btn-nav-toggle,
+.btn-navigation {
+	display: none;
+	background: #fff;
+}
+.btn-nav-toggle {
+	margin: 18px 0 0 10px;
+	padding: 7px;
+	width: 32px;
+	height: 32px;
+	border-radius: (30px);
+	color: #ddd;
+	border: 1px solid #f1f1f1;
+	&:active, &:focus, &:hover {
+		color: #ddd;
+	}
+	&-line {
+		display: block;
+		transform: rotate(-90deg);
+	}
+}
+.nav-open {
+	.btn-navigation-line {
+		&:nth-of-type(1) {
+			top: 8px;
+			transform: rotate(45deg)
+		}
+		&:nth-of-type(2) {
+			display: none;
+		}
+		&:nth-of-type(3) {
+			transform: rotate(-45deg)
+		}
+	}
+}
+
+
+

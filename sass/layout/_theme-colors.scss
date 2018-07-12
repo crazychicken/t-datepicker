@@ -1,0 +1,97 @@
+a {
+  color: $variable;
+  &:hover {
+    color: darken($variable, 10%);
+  }
+}
+
+.navbar-brand {
+  &, &:hover {
+    color: $variable;
+  }
+}
+
+.item {
+  color: lighten(#5b5b5b, 10%);
+  &:hover, &.active {
+    color: $variable;
+    &::after {
+      background: $variable;
+    }
+  }
+}
+
+// Js - add style - block-title
+.active {
+  .item {
+    color: $variable;
+  }
+  &::after {
+    background: $variable;
+  }
+}
+.sider-bar,
+.nav-home {
+  li {
+    &::after {
+      background: $variable;
+    }
+  }
+}
+
+.amp_pre .btn-copy {
+  background: $variable;
+}
+
+// _buttons
+.btn-border {
+  color: $variable;
+  border-color: $variable;
+  &:hover {
+    color: darken($variable, 10%);
+    border-color: darken($variable, 10%);
+  }
+}
+.btn-main,
+.btn-toggle {
+  background: $variable;
+  &:hover {
+    background-color: darken($variable, 10%);
+  }
+}
+.ps__thumb-x,
+.ps__thumb-y {
+  background-color: $variable;
+}
+.ps__rail-y:hover > .ps__thumb-y,
+.ps__rail-y:focus > .ps__thumb-y,
+.ps__rail-y.ps--clicking .ps__thumb-y {
+  background-color: lighten($variable, 10%);
+}
+.checkbox {
+  &[checked='checked'] + &-label {
+    &::after {
+      background-color: $variable;
+    }
+  }
+  &:hover + &-label {
+    &::after {
+      background-color: darken($variable, 5%);
+    }
+  }
+}
+.box-getdate {
+  .btn-main {
+    color: $variable;
+    border: 1px solid $variable;
+    &:hover, &:focus, &:active {
+      color: darken($variable, 15%);
+      border-color: darken($variable, 15%);
+    }
+  }
+}
+.progress {
+  &-bars {
+    background: $variable;
+  }
+}

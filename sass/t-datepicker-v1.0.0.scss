@@ -1,0 +1,221 @@
+/*
+* Tuds tDatepicker
+* Copyright 2018 tuds - crazychicken
+* Licensed under: LICENSE
+* Version: v1.0.0
+*/
+// @import './themes/t-datepicker-theme-blue.scss';
+$z_index: 9999;
+$t-width-picker: 650px;
+.t-datepicker {
+    clear: both;
+    float: left;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    font-size: 14px;
+    line-height: 1.4em;
+    max-width: $t-width-picker;
+}
+
+.t-check-in,
+.t-check-out {
+    display: inline-block;
+    position: relative;
+    border-width: 1px;
+    border-style: solid;
+    // min-width: 117px;
+    // height: 44px;
+    float: left;
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    .t-date-info-title {
+        position: absolute;
+        top: 12px;
+        left: 33px;
+        display: block;
+        font-weight: normal;
+        opacity: 0.5;
+        font-size: 13px;
+        cursor: pointer;
+    }
+    .fa {
+        top: -1px;
+        position: relative;
+    }
+    // ./End Fix planholder title Tra Phong
+}
+.t-check-in {
+    border-right-width: 1px;
+    border-radius: 4px 0 0 4px;
+}
+.t-check-out {
+    border-left-width: 0;
+    border-radius: 0 4px 4px 0;
+    .t-datepicker-day {
+        left: -100%;
+        // right: calc(200% - 650px);
+    }
+}
+.t-arrow-top {
+    top: 32px;
+    z-index: $z-index;
+    &, &::after {
+        // left: 20px;
+        border-width: 10px;
+        border-style: solid;
+        border-color: transparent;
+        border-bottom-color: #ddd;
+        display: inline-block;
+        position: absolute;
+    }
+    &::after {
+        top: -9px;
+        left: -10px;
+        content: '';
+        border-width: 10px;
+        border-bottom-color: #fff;
+    }
+}
+.t-dates {
+    padding: 10px 15px;
+    height: 38px;
+    box-sizing: border-box;
+}
+.t-datepicker-day {
+    border-width: 1px;
+    border-style: solid;
+    overflow: hidden;
+    top: 51px;
+    // left: -441px;
+    overflow: hidden;
+    position: absolute;
+    z-index: $z_index;
+    padding: 10px 0;
+    border-radius: 4px;
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.25);
+}
+.t-table-wrap {
+    width: 100%;
+    padding: 0 10px;
+    font-size: inherit;
+    display: inline-block;
+    vertical-align: top;
+}
+.t-datepicker-days {
+    width: $t-width-picker;
+    .t-table-wrap {
+        padding: 0;
+        width: 47%;
+        margin-left: 2%;
+    }
+    @media ( max-width: 480px ) {
+        width: 300px;
+        .t-table-wrap {
+            margin-left: 0;
+            width: 100%;
+            padding: 0 10px;
+        }
+    }
+    @media ( max-width: 320px ) {
+        width: 290px;
+        .t-table-wrap {
+            padding: 0 5px;
+        }
+    }
+}
+.t-table-condensed {
+    width: 100%;
+    // reset
+    border-spacing: 0;
+    border-collapse: collapse;
+    vertical-align: top;
+}
+.t-next, .t-prev,
+.t-table-condensed th, 
+.t-table-condensed td {
+    text-align: center;
+    padding: 10px;
+}
+.t-date-title {
+    clear: both;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    margin: 0;
+    padding: 15px 0 10px 0;
+}
+.t-day, .t-range, .t-start, .t-end, .t-disabled {
+    border-width: 2px;
+    border-style: solid;
+}
+.t-disabled {
+    cursor: auto;
+}
+.t-arrow {
+    border: none;
+}
+.t-dates, .t-day, .t-arrow,
+.t-range, .t-start, .t-end, .t-end-limit {
+    cursor: pointer;
+}
+
+.t-special-day {
+    position: relative;
+    &:before {
+        content: '';
+        height: 3px;
+        width: 3px;
+        top: 0;
+        right: 0;
+        position: absolute;
+        display: block;
+        border-width: 3px;
+        border-style: solid;
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+    }
+}
+
+
+.t-hover-day {
+    position: relative;
+    // .t-hover-day > .t-hover-day-content
+    &-content {
+        top: -30px;
+        width: 70px;
+        right: calc(50% - 35px);
+        position: absolute;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 3px 5px;
+        border-radius: 4px;
+        z-index: $z_index;
+    }
+    // Arrow
+    &::after {
+        content: '';
+        position: absolute;
+        top: -8px;
+        right: calc(50% - 7px);
+        border-width: 7px;
+        border-style: solid;
+    }
+}
+// Color t-toDay import more hoverday
+.t-today {
+    .t-hover-day-content {
+        z-index: $z_index - 1;
+    }
+}
+
+.t-disabled,
+.t-check-in .t-end-limit {
+    opacity: 0.25;
+    cursor: auto;
+}
+
+
+

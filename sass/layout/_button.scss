@@ -1,0 +1,42 @@
+.btn {
+	font-size: 13px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	border-radius: 3px;
+	padding: 12px;
+	display: inline-block;
+	text-decoration: none;
+	transition: all 0.25s linear;
+	&, &:hover {
+		color: #fff;
+	}
+}
+.btn-border {
+	padding: 10px;
+	border-radius: 4px;
+	background: transparent;
+	color: $color-main;
+	border: 2px solid $color-main;
+	&:hover {
+		color: darken($color-main, 10%);
+		border-color: darken($color-main, 10%);
+	}
+}
+.btn-main {
+	background: $color-main;
+	&:hover {
+		background-color: darken($color-main, 10%);
+	}
+}
+.box-getdate {
+	.btn-main {
+		&:hover, &:focus, &:active {
+			background: none;
+		}
+    }
+}
+.btn-sm {
+	font-size: 11px;
+	padding: 6px 10px;
+}

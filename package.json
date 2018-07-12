@@ -1,0 +1,31 @@
+{
+  "name": "tDatePicker",
+  "version": "1.0.0",
+  "description": "The tDatePicker JavaScript library lets you apply more than options and calender data.",
+  "main": "./theme/js/t-datepicker.min.js",
+  "scripts": {
+    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "dev": "cross-env NODE_ENV=development webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/tuds/t-datepicker.git"
+  },
+  "author": "Tuds - Crazychiken",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/crazychicken/t-datepicker/issues"
+  },
+  "homepage": "https://github.com/crazychicken/t-datepicker#readme",
+  "devDependencies": {
+    "browser-sync": "^2.24.4",
+    "converthtml": "^1.0.8",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-file-include": "^2.0.1",
+    "gulp-jsmin": "^0.1.5",
+    "gulp-sass": "^4.0.1",
+    "perfect-scrollbar": "^1.4.0"
+  }
+}

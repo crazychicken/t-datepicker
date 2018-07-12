@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>T-Datepicker | Index | Tuds</title>
+	<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<!-- master tool all pages -->
+<meta name="google-site-verification" content="CFHUFRq-1zKBK2UX36TNUFlslJVd3zTZ2WdrYGFCNKg" />
+<!-- ./master tool all pages -->
+
+<!-- SEO -->
+<meta name="keywords" content="t-datepicker, datepicker, two datepicker, bootstrap-datepicker, qwerty, converthtml, t-scroll">
+<meta name="author" content="Tuds - Crazychicken">
+<meta name="robots" content="noodp,index,follow" />
+<meta name="language" content="en"/>
+<link rel="alternate" href="https://t-datepicker.getqwerty.com/" hreflang="en"/>
+<link rel="canonical" href="https://t-datepicker.getqwerty.com/"/>
+<link rel="shortcut icon" type="image/png" sizes="16x16" href="https://t-datepicker.getqwerty.com/theme/images/favicon.png">
+<!-- ./SEO -->
+
+<!-- SOCIAL -->
+<meta property="og:image" content="https://t-datepicker.getqwerty.com/theme/images/social-t-datepicker.png"/>
+<meta property="og:url" content="https://t-datepicker.getqwerty.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="t-datepicker" />
+<meta property="fb:pages" content="350864418714009" />
+<!-- ./SOCIAL -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-46711522-8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-46711522-8');
+</script>
+
+
+<link rel="stylesheet" href="./theme/css/t-datepicker.min.css">
+<!-- <link rel="stylesheet" href="./theme/css/t-datepicker-v1.0.0.css"> -->
+<link rel="stylesheet" href="./theme/css/layout/style.css">
+<link rel="stylesheet" href="./theme/css/layout-theme/theme-main.css">
+<!-- <link rel="stylesheet" href="./theme/css/themes/t-datepicker-main.css"> -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="./theme/js/t-datepicker.min.js"></script>
+<!-- <script type="text/javascript" src="./theme/js/t-datepicker-v1.0.0.js"></script> -->
+<script type="text/javascript" src="./theme/libs/perfect-scrollbar.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		// Toggle button view more
+		$('.block-view-more .btn').on('click', function(){
+			if ( $(this).text() !== 'Show content >>' ) {
+				$(this).text('Show content >>')
+			} else {
+				$(this).text('Hide content >>')
+			}
+			$(this).next().slideToggle('slow')
+		})
+		// Scroll side-bar with body
+		var body = $("html, body");
+		$('.sider-bar .item').on('click', function(){
+			$(this).parents('.sider-bar').find('.active').removeClass('active');
+			$(this).parent().addClass('active');
+			var getTop = $('#'+$(this).attr('title'))
+			$('.block-title').removeClass('active')
+			getTop.find('.block-title').addClass('active')
+			body.animate(
+				{scrollTop: getTop.position().top}, 500
+			);
+		})
+		// Get link location window with nav-list
+		if ( $('[data-js="get-part"]').length !== 0 ) {
+			var get_href = $('[data-js="get-part"] .item')
+			get_href.each( function(e) {
+				var a = $(this).attr('href')
+				if ( window.location.pathname === '/' && a.indexOf('index') !== -1 ) { // indexOf === -1 false
+					return $(this).addClass('active')
+				}
+				if ( a.indexOf(window.location.pathname) !== -1 && window.location.pathname !== '/' ) {
+					$(this).addClass('active')
+				}
+			})
+		}
+		$('.amp_pre').append('<button class="btn-copy">Copy</button>')
+		$('.btn-copy').on('click', function(){
+			var cl_amp_pre = $(this).parents('.amp_pre');
+			cl_amp_pre.addClass('amp_pre_active')
+			$(this).text('');
+			setTimeout(function(){
+				$('.amp_pre_active').removeClass('amp_pre_active')
+				$('.btn-copy').text('Copy');
+			}, 750)
+			if ( cl_amp_pre.find('.copy-code').length !== 0 ) {
+				$('.copy-code').remove()
+			}
+			cl_amp_pre.append('<textarea class="copy-code" cols="30" rows="10"></textarea>')
+			$('.copy-code').val(cl_amp_pre.text())
+			copyToClipboard('.copy-code')
+		})
+
+		function copyToClipboard(el) {
+		    // resolve the element
+		    el = (typeof el === 'string') ? document.querySelector(el) : el;
+
+		    // handle iOS as a special case
+		    if (navigator.userAgent.match(/ipad|ipod|iphone/i)) {
+
+		        // save current contentEditable/readOnly status
+		        var editable = el.contentEditable;
+		        var readOnly = el.readOnly;
+
+		        // convert to editable with readonly to stop iOS keyboard opening
+		        el.contentEditable = true;
+		        el.readOnly = true;
+
+
+		        // create a selectable range
+		        var range = document.createRange();
+		        range.selectNodeContents(el);
+
+		        // select the range
+		        var selection = window.getSelection();
+		        selection.removeAllRanges();
+		        selection.addRange(range);
+		        el.setSelectionRange(0, 999999);
+
+		        // restore contentEditable/readOnly to original state
+		        el.contentEditable = editable;
+		        el.readOnly = readOnly;
+		    }
+		    else {
+		        el.select();
+		    }
+
+		    // execute copy command
+		    document.execCommand('copy');
+		}
+		$('.item').on('touchstart', function(e) {
+			$(this).off('hover')
+		})
+	})
+</script>
+	<meta name="description" content="A modern datepicker library with useful options and methods. The tDatepicker more than 35 pretty options and many methods help you change date, getDate, update when you need.">
+    <meta property="og:description" content="A modern datepicker library with useful options and methods. The tDatepicker more than 35 pretty options and many methods help you change date, getDate, update when you need." />
+
+    <!-- master tool only -->
+    <script type="application/ld+json">
+      {
+          "@context" : "https://schema.org",
+          "@type": "WebPage",
+          "url" : "https://t-datepicker.getqwerty.com",
+          "name": "t-datepicker",
+          "alternateName": "t-datepicker",
+          "author": {
+              "@type": "Person",
+              "name": "Tu Truong"
+              "url": "https://twitter.com/mtu_truong"
+          },
+          "description":"A modern datepicker library with useful options and methods. The tDatepicker more than 35 pretty options and many methods help you change date, getDate, update when you need.",
+          "image": {
+              "@type": "ImageObject",
+              "width": 256,
+              "height": 256,
+              "url": "https://t-datepicker.getqwerty.com/theme/images/about-t-datepicker.png"
+          },
+          "creator": ["Tu Truong"],
+          "sameAs": ["https://www.facebook.com/tudscss",
+          "https://plus.google.com/u/0/111272361722398364018",
+          "https://twitter.com/mtu_truong",
+          "https://www.youtube.com/channel/UCDACe-7BFGDucQoxTDfPotw"],
+          "keywords": ["t-datepicker", "datepicker", "two datepicker", "bootstrap-datepicker", "getqwerty", "qwerty", "converthtml", "t-scroll"]
+      }
+    </script>
+    <!-- /master tool only -->
+
+</head>
+<body>
+	<div class="auto-colors">
+	<button class="btn btn-toggle">&#x276E;</button>
+	<!-- <button class="btn btn-toggle">&#x276F;</button> -->
+	<button class="btn btn-change-color" data-title="theme-blue.css" title="theme-blue"></button>
+	<button class="btn btn-change-color" data-title="theme-bluegrey.css" title="theme-bluegrey"></button>
+	<button class="btn btn-change-color" data-title="theme-cyan.css" title="theme-cyan"></button>
+
+	<button class="btn btn-change-color" data-title="theme-green.css" title="theme-green"></button>
+	<button class="btn btn-change-color" data-title="theme-lime.css" title="theme-lime"></button>
+	<button class="btn btn-change-color" data-title="theme-orange.css" title="theme-orange"></button>
+
+	<button class="btn btn-change-color" data-title="theme-purple.css" title="theme-purple"></button>
+	<button class="btn btn-change-color" data-title="theme-teal.css" title="theme-teal"></button>
+	<button class="btn btn-change-color" data-title="theme-yellow.css" title="theme-yellow"></button>
+
+	<button class="btn btn-block btn-change-color" data-title="theme-main.css" title="theme-main"></button>
+	<button class="btn btn-block btn-main auto-slider">Auto Slider</button>
+</div>
+
+<script type="text/javascript">
+$(document).ready( function() {
+	// $('link')
+	function changeStyle(pr_el) {
+		var a = 1;
+		var link_href;
+		pr_el.each( function(){
+			link_href = $(this).attr('href');
+			if ( link_href.indexOf('theme-') !== -1 ) {
+				switch(link_href) {
+					// theme-main
+					case link_href = './theme/css/layout-theme/theme-main.css':
+					link_href = link_href.replace('theme-main', 'theme-blue')
+					break;
+
+					// theme-blue
+					case link_href = './theme/css/layout-theme/theme-blue.css':
+					link_href = link_href.replace('theme-blue', 'theme-bluegrey')
+					break;
+
+					// theme-bluegrey
+					case link_href = './theme/css/layout-theme/theme-bluegrey.css':
+					link_href = link_href.replace('theme-bluegrey', 'theme-cyan')
+					break;
+
+					// theme-cyan
+					case link_href = './theme/css/layout-theme/theme-cyan.css':
+					link_href = link_href.replace('theme-cyan', 'theme-green')
+					break;
+
+					// theme-green
+					case link_href = './theme/css/layout-theme/theme-green.css':
+					link_href = link_href.replace('theme-green', 'theme-lime')
+					break;
+
+					// theme-lime
+					case link_href = './theme/css/layout-theme/theme-lime.css':
+					link_href = link_href.replace('theme-lime', 'theme-orange')
+					break;
+
+					// theme-orange
+					case link_href = './theme/css/layout-theme/theme-orange.css':
+					link_href = link_href.replace('theme-orange', 'theme-purple')
+					break;
+
+					// theme-purple
+					case link_href = './theme/css/layout-theme/theme-purple.css':
+					link_href = link_href.replace('theme-purple', 'theme-teal')
+					break;
+
+					// theme-teal
+					case link_href = './theme/css/layout-theme/theme-teal.css':
+					link_href = link_href.replace('theme-teal', 'theme-yellow')
+					break;
+
+					// theme-yellow
+					case link_href = './theme/css/layout-theme/theme-yellow.css':
+					link_href = link_href.replace('theme-yellow', 'theme-main')
+				}
+				$(this).attr('href', link_href)
+
+				// click add style and stop auto slide color
+				$('.btn-change-color').on('click', function(){
+					a = 2
+				})
+			}
+		});
+		
+		setTimeout(function(){
+			if ( a === 1 ) {
+				changeStyle($('link'))
+			}
+		}, 3000)
+	}
+	function offSlider(pr_el) {
+		pr_el.each( function(){
+			var link_href = $(this).attr('href');
+			var _this = $(this)
+			// setThem follow date of week
+			if ( link_href.indexOf('theme-') !== -1 ) {
+				switch(new Date().getDay()) {
+					// theme-blue
+					case 0:
+					$(this).attr('href', './theme/css/layout-theme/theme-blue.css')
+					break;
+
+					// theme-blue
+					case 1:
+					$(this).attr('href', './theme/css/layout-theme/theme-orange.css')
+					break;
+
+					// theme-bluegrey
+					case 2:
+					$(this).attr('href', './theme/css/layout-theme/theme-teal.css')
+					break;
+
+					// theme-cyan
+					case 3:
+					$(this).attr('href', './theme/css/layout-theme/theme-cyan.css')
+					break;
+
+					// theme-lime
+					case 4:
+					$(this).attr('href', './theme/css/layout-theme/theme-green.css')
+					break;
+
+					// theme-main
+					case 5:
+					$(this).attr('href', './theme/css/layout-theme/theme-main.css')
+					break;
+
+					// theme-orange
+					case 6:
+					$(this).attr('href', './theme/css/layout-theme/theme-purple.css')
+					break;
+				}
+				$('.btn-change-color').on('click', function(){
+					var data_title = $(this).attr('data-title')
+					tuds = link_href.slice(link_href.search('theme-'), link_href.length)
+					data_title = link_href.replace(tuds, data_title)
+					_this.attr('href', data_title)
+				})
+			}
+		})
+	}
+	// Change color selector
+	offSlider($('link'));
+	
+	// changeStyle($('link')); Auto slider
+	$('.auto-slider').on('click', function(){
+		changeStyle($('link'));
+	});
+
+	$('.btn-toggle').on('click', function(){
+		if ( $(this).text() === '❮' ) {
+			$(this).html( '&#x276F;' )
+			$(this).parents('.auto-colors').css('right', 0)
+		} else {
+			$(this).html( '&#x276E;' )
+			$(this).parents('.auto-colors').css('right', -130+'px')
+		}
+	})
+
+})
+</script>
+	<div class="container-home">
+		<div class="nav-home" data-js="get-part">
+			<a class="item active" href="./index.html">Home</a>
+			<a class="item" href="./installation.html">Install</a>
+			<a class="item" href="./documents.html">Documents</a>
+			<a class="item" href="./demos.html">Demos</a>
+			<a class="item" href="https://goo.gl/oKmr8W">Donate</a>
+		</div>
+		<div class="home-center">
+			<h1>t-datepicker</h1>
+			<div class="btn-group">
+				<a href="#" class="btn btn-main">Download</a>
+				<a href="#" class="btn btn-border">Github</a>
+			</div>
+			<p class="version">Currently 1.0.0</p>
+		</div>
+		<footer class="home-footer">
+			Another thing from <a href="https://tuds.ninja/">Tuds - Crazychicken.</a>
+			<p>
+				<small>
+					Code and documentation copyright 2018, MIT license.
+				</small>
+			</p>
+		</footer>
+	</div>
+</body>
+</html>

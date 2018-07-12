@@ -1,0 +1,19 @@
+node_modules
+**.DS_Store
+.DS_Store?
+*.html
+*.css
+!/html/index.html
+!/html/html-global/auto-colors.html
+
+!/public/index.html
+!/public/theme/css/themes/*.css
+!/public/theme/css/t-datepicker.min.css
+
+!/html/html-global/head.html
+
+# compass watch cache
+.sass-cache
+package-lock.json
+theme
+note.md

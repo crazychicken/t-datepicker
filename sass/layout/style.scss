@@ -1,0 +1,54 @@
+// $color-main: #f5da55;
+// All libs
+@import './libs';
+// @import '../../node_modules/converthtml/sass/convert-theme-default';
+// $color-main: #BC459F;
+$color-main: $quote;
+@import './animations';
+@import './global';
+@import './fonts';
+
+@import './autocss';
+@import './block';
+@import './button';
+@import './forms';
+
+@import './navbar';
+@import './sider-bar';
+@import './index';
+@import './footer';
+
+@import './ps_custom';
+@import './mb';
+
+
+
+@each $name, $color in 
+(blue,     #59caf5),
+(bluegrey, #607D8B),
+(cyan,     #4DD0E1),
+(green,    #66BB6A),
+(lime,     #C0CA33),
+(main,     #20c997),
+(orange,   #fd7e14),
+(purple,   #BA68C8),
+(teal,     #4DB6AC),
+(yellow,   #FDD835)
+{
+	[data-title^="theme-#{$name}"] {
+		background: $color;
+	}	
+}
+
+// more them funy
+// @import './theme-main';
+// @import './theme-blue';
+// @import './theme-bluegrey';
+// @import './theme-cyan';
+// @import './theme-green';
+// @import './theme-lime';
+// @import './theme-orange';
+// @import './theme-purple';
+// @import './theme-teal';
+// @import './theme-yellow';
+

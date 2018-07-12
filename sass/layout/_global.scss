@@ -1,0 +1,162 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  color: #5b5b5b;
+  background: #fff;
+  font-size: 14px;
+  line-height: 1.4rem;
+  font-family: 'Open Sans', sans-serif;
+  &.open {
+    background: rgba(0,0,0,0.5);
+    .container-content, footer {
+      opacity: 0.25;
+    }
+  }
+}
+h1,h2,h3 {
+  font-weight: 500;
+}
+a {
+  cursor: pointer;
+  &:focus {
+    background: none;
+  }
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+.container {
+  width: 1280px;
+  float: left;
+  clear: both;
+  position: relative;
+  @media ( max-width: 1024px ) {
+    width: 100%;
+  }
+}
+html, body, .container {
+  height: 100%;
+}
+.navbar+.container {
+  padding-top: 100px;
+}
+.container-right {
+  height: 100%;
+  width: 1024px;
+  padding-left: 280px;
+  padding-right: 30px;
+}
+.container-content {
+  width: 100%;
+  padding-bottom: 100px;
+}
+.docs-title {
+  font-size: 36px;
+  margin: 20px 0 0 0;
+}
+
+.item {
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  transition: all 0.2s linear;
+  color: lighten(#5b5b5b, 10%);
+}
+.amp_pre {
+  position: relative;
+  .btn-copy {
+    border: none;
+    color: #fff;
+    font-size: 11px;
+    position: absolute;
+    border-radius: 4px 0 0 0;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    z-index: 5;
+    padding: 3px 10px 4px 10px;
+    cursor: pointer;
+    transition: all 0.25s linear;
+    @media ( min-width: 1024px ) {
+      right: -50px;
+    }
+  }
+  &:hover {
+    .btn-copy {
+      right: 0;
+    }
+  }
+  &_active {
+    .btn-copy {
+      animation-name: pre_active;
+      animation-duration: 0.75s;
+      animation-timing-function: linear;
+      animation-direction: alternate;
+      // animation-iteration-count: infinite;
+    }
+  }
+}
+.copy-code {
+  opacity: 0;
+  position: fixed;
+  z-index: -1;
+}
+.auto-colors {
+  z-index: 11;
+  position: fixed;
+  top: 90px;
+  padding-bottom: 10px;
+  background: #fff;
+  width: 130px;
+  border-radius: 4px 0 0 4px;
+  text-align: left;
+  border: 1px solid #f1f1f1;
+  display: inline-block;
+  right: -130px;
+  // right: 0px;
+  transition: all 0.2s linear;
+  .btn {
+    position: relative;
+    &-change-color,
+    &-main {
+      margin: 10px 0 0 10px;
+    }
+    &-block {
+      width: 100px;
+    }
+  }
+  .btn-toggle {
+    position: absolute;
+    line-height: 1px;
+    width: 32px;
+    height: 36px;
+    padding: 5px;
+    left: -32px;
+    top: 10px;
+    border-radius: 20px 0 0 20px;
+  }
+}
+
+.t-datepicker {
+  width: 300px;
+  margin-bottom: 30px;
+  @media ( max-width: 480px ) {
+    margin-bottom: 15px;
+  }
+  @media ( max-width: 320px ) {
+    width: 290px;
+  }
+}
+.btn-update {
+  @media ( max-width: 480px ) {
+    margin: 0;
+  }
+}
+
