@@ -3,6 +3,7 @@ node_modules
 .DS_Store?
 *.html
 *.css
+libs
 
 !/html/index.html
 !/html/html-global/head.html
