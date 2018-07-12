@@ -1,8 +1,8 @@
 {
-  "name": "tDatePicker",
+  "name": "t-datepicker",
   "version": "1.0.0",
   "description": "The tDatePicker JavaScript library lets you apply more than options and calender data.",
-  "main": "./theme/js/t-datepicker.min.js",
+  "main": "./public/theme/js/t-datepicker.min.js",
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "dev": "cross-env NODE_ENV=development webpack --config webpack.config.js"

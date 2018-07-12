@@ -6,14 +6,17 @@ images
 *.css
 *.html
 *.js
-public/theme/css/layout
-public/theme/css/layout-theme
+
 !/public/theme/css/themes/*.css
 !/public/theme/css/t-datepicker.min.css
 !/public/theme/js/t-datepicker.min.js
+
+!/sass/t-datepicker-v1.0.0.scss
+
 **.DS_Store
 .DS_Store?
 
+package-lock.json
 .*.swp
 ._*
 .editorconfig
