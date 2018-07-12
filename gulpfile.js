@@ -26,7 +26,7 @@ gulp.task( 'sass' , function() {
     ])
     .pipe(sass())
     .pipe(gulp_concat('t-datepicker.min.css'))
-    // .pipe(cssmin())
+    .pipe(cssmin())
     .pipe(gulp.dest('./public/theme/css'))
 
     gulp.src([
@@ -45,7 +45,7 @@ gulp.task( 'min-css' , function() {
         '!./sass/themes/t-datepicker-main.scss'
     ])
     .pipe(sass())
-    // .pipe(cssmin())
+    .pipe(cssmin())
     .pipe(gulp.dest('./public/theme/css'))
     .pipe(browser_sync.stream());
 })
@@ -61,7 +61,7 @@ gulp.task('js', function(){
         './theme/js/*.js'
     ])
     .pipe(gulp_concat('t-datepicker.min.js'))
-    // .pipe(jsmin())
+    .pipe(jsmin())
     .pipe(gulp.dest('./public/theme/js'))
     .pipe(browser_sync.stream());
 });
