@@ -11,7 +11,7 @@ images
 !/public/theme/css/t-datepicker.min.css
 !/public/theme/js/t-datepicker.min.js
 
-!/sass/t-datepicker-v1.0.0.scss
+!/sass/t-datepicker.scss
 
 **.DS_Store
 .DS_Store?

@@ -1,6 +1,6 @@
 ![enter image description here](https://t-datepicker.getqwerty.com/theme/images/about-t-datepicker.png)
 
-[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]]
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Backers on Open Collective](https://opencollective.com/t-datepicker/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/t-datepicker/sponsors/badge.svg)](#sponsors) 
 
 ## Quick start t-datepicker
 * Clone the repo: `git clone git@github.com:crazychicken/t-datepicker.git`
