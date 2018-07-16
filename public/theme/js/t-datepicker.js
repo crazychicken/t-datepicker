@@ -40,6 +40,7 @@
 
         toDayShowTitle       : true,  // true|false
         dateRangesShowTitle  : true,  // true|false
+        dateRangesHover      : true,  // true|false
 
         toDayHighlighted     : false, // true|false
         nextDayHighlighted   : false, // true|false
@@ -885,8 +886,22 @@
                             // Không hiện ngày t-check-out liền kề
                             data_utc_out = get_utc;
                         }
+                        if ( $(this).parents('.t-picker-only').hasClass('t-picker-only') === true ) {
+                            data_utc_out = data_utc_in;
+                        }
                         // Click calendar ở t-check-in chuyển element qua t-check-out
                         datepicker = $(this).parents('.t-datepicker').find('.t-check-out')
+                        // Chuyển đổi khi không có t-check-out, only calendar for options dateRange === true
+                        if ( datepicker.length === 0 ) {
+                            datepicker = $(this_el).find('.t-picker-only')
+                            // Xoá t-check-out sao khi chọn ngày
+                            setTimeout( function(){
+                                if ( $('.t-datepicker-day').length !== 0 && settings.autoClose === true ) {
+                                    $('.t-datepicker-day').remove()
+                                    $('.t-arrow-top').remove()
+                                }
+                            }, 10 )
+                        }
                     }
 
                     if ( $(this).parents('.t-check-out').hasClass('t-check-out') === true ) {
@@ -907,7 +922,7 @@
                         $(pr_el).trigger('afterCheckOut', [[data_utc_in, data_utc_out]])
                         // Xoá t-check-out sao khi chọn ngày
                         setTimeout( function(){
-                            if ( $('.t-datepicker-day').length !== 0 ) {
+                            if ( $('.t-datepicker-day').length !== 0 && settings.autoClose === true ) {
                                 $('.t-datepicker-day').remove()
                                 // $('.t-arrow-top').css({'display': 'none'})
                                 $('.t-arrow-top').remove()
@@ -994,24 +1009,26 @@
 
                             return numDay;
                         }
-
-                        var numDay = checkNumNight(this, dataUTC)
-                        // console.log(numDay)
-                        // options dateRangesShowTitle true|false
-                        if ( settings.dateRangesShowTitle === true ) {
-                            var num_full = 1;
-                            if ( settings.showFullDateRanges === true ) { 
-                                num_full = 0;
-                                // Full day always are 2 days
-                                settings.titleDateRange = settings.titleDateRanges;
-                            }
-                            if ( numDay === 2 ) {
-                                // console.log(numDay)
-                                // fn Global - Hover khi ở t-check-in và khi ở t-check-out
-                                appendSpan(this, 't-hover-day', 't-hover-day-content', ((numDay - num_full) + ' ' +settings.titleDateRange) )
-                            } else if ( numDay > 2 ) {
-                                // fn Global - Hover khi ở t-check-in và khi ở t-check-out
-                                appendSpan(this, 't-hover-day', 't-hover-day-content', ((numDay - num_full) + ' '+settings.titleDateRanges) )
+                        // Option dateRangesHover focus only date picker
+                        if ( settings.dateRangesHover === true || settings.dateRangesHover === 'true' ) {
+                            var numDay = checkNumNight(this, dataUTC)
+                            // console.log(numDay)
+                            // options dateRangesShowTitle true|false
+                            if ( settings.dateRangesShowTitle === true ) {
+                                var num_full = 1;
+                                if ( settings.showFullDateRanges === true ) { 
+                                    num_full = 0;
+                                    // Full day always are 2 days
+                                    settings.titleDateRange = settings.titleDateRanges;
+                                }
+                                if ( numDay === 2 ) {
+                                    // console.log(numDay)
+                                    // fn Global - Hover khi ở t-check-in và khi ở t-check-out
+                                    appendSpan(this, 't-hover-day', 't-hover-day-content', ((numDay - num_full) + ' ' +settings.titleDateRange) )
+                                } else if ( numDay > 2 ) {
+                                    // fn Global - Hover khi ở t-check-in và khi ở t-check-out
+                                    appendSpan(this, 't-hover-day', 't-hover-day-content', ((numDay - num_full) + ' '+settings.titleDateRanges) )
+                                }
                             }
                         }
                         
@@ -1199,9 +1216,7 @@
                 setDaysInMonth($(pr_el).find('.t-dates').parent(), pr_date_utc)
 
                 // Options autoClose
-                if ( settings.autoClose === true || settings.autoClose === 'true') {
-                    $('html').addClass('t-datepicker-open')
-                }
+                $('html').addClass('t-datepicker-open')
             }
         }
 
@@ -1265,9 +1280,7 @@
                         // Thêm calendar vào t-check-in hoặc t-check-out
                         setDaysInMonth($(this).find('.t-check-in'), dataUTC[0])
                         // Options autoClose
-                        if ( settings.autoClose === true || settings.autoClose === 'true') {
-                            $('html').addClass('t-datepicker-open')
-                        }
+                        $('html').addClass('t-datepicker-open')
                     })
                 }
             }

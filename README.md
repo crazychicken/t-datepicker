@@ -1,6 +1,6 @@
 ![enter image description here](https://t-datepicker.getqwerty.com/theme/images/about-t-datepicker.png)
 
-[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Backers on Open Collective](https://opencollective.com/t-datepicker/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/t-datepicker/sponsors/badge.svg)](#sponsors) 
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url]
 
 ## Quick start t-datepicker
 * Clone the repo: `git clone git@github.com:crazychicken/t-datepicker.git`
@@ -55,6 +55,7 @@ https://t-datepicker.getqwerty.com/methods.html
 ```
 
 * If you want use two different calendar, you just insert the new class.
+
 ```html
 <div class="t-datepicker class_a">
   <div class="t-check-in"></div>
@@ -81,6 +82,31 @@ https://t-datepicker.getqwerty.com/methods.html
     });
     $('.class_b').tDatePicker({
       // options only here
+    });
+  });
+</script>
+```
+
+## Call only picker
+
+* You need add class .t-picker-only include .t-check-in.
+
+```html
+<div class="t-datepicker">
+  <div class="t-check-in t-picker-only"></div>
+</div>
+```
+
+* Now call the tDatePicker initializer function and your tDatePicker is ready. [View Demo](https://t-datepicker.getqwerty.com/demo-only-calendar.html)
+
+```html
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.t-datepicker').tDatePicker({
+      autoClose: true,
+      limitNextMonth: 3,
+      numCalendar : 1,
+      dateRangesHover: false
     });
   });
 </script>
@@ -140,6 +166,7 @@ https://t-datepicker.getqwerty.com/methods.html
 // Active date
 * toDayShowTitle
 * dateRangesShowTitle
+* dateRangesHover
 * toDayHighlighted
 * nextDayHighlighted
 * daysOfWeekHighlighted

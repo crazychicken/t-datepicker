@@ -2,7 +2,7 @@
 * Tuds tDatepicker
 * Copyright 2018 tuds - crazychicken
 * Licensed under: LICENSE
-* Version: v1.0.1
+* Version: v1.0.2
 */
 // @import './themes/t-datepicker-theme-blue.scss';
 $z_index: 9999;
@@ -50,6 +50,10 @@ $t-width-picker: 650px;
     border-right-width: 1px;
     border-radius: 4px 0 0 4px;
 }
+.t-picker-only {
+    border-radius: 4px;
+    width: 100%;
+}
 .t-check-out {
     border-left-width: 0;
     border-radius: 0 4px 4px 0;
@@ -91,7 +95,7 @@ $t-width-picker: 650px;
     // left: -441px;
     overflow: hidden;
     position: absolute;
-    z-index: $z_index;
+    z-index: $z_index - 1;
     padding: 10px 0;
     border-radius: 4px;
     box-shadow: 0 7px 15px rgba(0, 0, 0, 0.25);
