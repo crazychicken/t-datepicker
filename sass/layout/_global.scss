@@ -126,7 +126,11 @@ html, body, .container {
     position: relative;
     &-change-color,
     &-main {
+      height: 24px;
       margin: 10px 0 0 10px;
+    }
+    &-main {
+      height: 39px;
     }
     &-block {
       width: 100px;

@@ -38,3 +38,5 @@ robots.txt
 
 # compass watch cache
 .sass-cache
+sitemap.xml
+CODE_OF_CONDUCT.md
