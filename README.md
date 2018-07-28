@@ -1,6 +1,15 @@
-![enter image description here](https://t-datepicker.getqwerty.com/theme/images/about-t-datepicker.png)
+# t-datepicker
+![enter image description here](https://t-datepicker.getqwerty.com/theme/images/about-themes.png)
+
+jQuery-based date picker! This date picker provides an easy way of creating both single and multi-viewed calendars capable of accepting single, range, and multiple selected dates. Easy to style, with many example styles.
+
+t-datepicker is a responsive, flexible, elegant, themeable, highly-configurable data range picker written in JavaScript (jQuery) and CSS(SASS).
+
+Suitable for hotel app that enables the users to quickly select check-in and check-out dates in a convenient calendar popup.
 
 [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url]
+
+![enter image description here](https://t-datepicker.getqwerty.com/theme/images/about-t-datepicker.png)
 
 ## Quick start t-datepicker
 * Clone the repo: `git clone git@github.com:crazychicken/t-datepicker.git`
@@ -10,6 +19,7 @@
 
 ## Demos
 https://t-datepicker.getqwerty.com/demos.html
+https://t-datepicker.getqwerty.com/demo-only-calendar.html
 
 ## Documentation
 https://t-datepicker.getqwerty.com/documents.html
