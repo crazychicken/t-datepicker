@@ -1,6 +1,6 @@
 {
   "name": "t-datepicker",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "The tDatePicker JavaScript library lets you apply more than options and calender data.",
   "homepage": "https://github.com/crazychicken/t-datepicker",
   "main": "./public/theme/js/t-datepicker.min.js",

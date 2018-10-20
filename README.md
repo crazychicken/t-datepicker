@@ -152,12 +152,13 @@ https://t-datepicker.getqwerty.com/methods.html
 * limitNextMonth
 * limitDateRanges
 * fnDataEvent
+* mergeDataEvent
 * showFullDateRanges
 
 // Theme
 * numCalendar
-* titleCI
-* titleCO
+* titleCheckIn
+* titleCheckOut
 * titleDateRange
 * titleDateRanges
 * titleToday
@@ -180,6 +181,7 @@ https://t-datepicker.getqwerty.com/methods.html
 * toDayHighlighted
 * nextDayHighlighted
 * daysOfWeekHighlighted
+* dateDisabled
 
 ## Tree
 ```
