@@ -22,7 +22,7 @@ $color-main: $quote;
 
 
 
-@each $name, $color in 
+@each $name, $color in
 (blue,     #59caf5),
 (bluegrey, #607D8B),
 (cyan,     #4DD0E1),
@@ -36,7 +36,7 @@ $color-main: $quote;
 {
 	[data-title^="theme-#{$name}"] {
 		background: $color;
-	}	
+	}
 }
 
 // more them funy
@@ -50,4 +50,3 @@ $color-main: $quote;
 // @import './theme-purple';
 // @import './theme-teal';
 // @import './theme-yellow';
-

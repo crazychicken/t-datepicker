@@ -139,6 +139,7 @@ https://t-datepicker.getqwerty.com/methods.html
 // Action
 * autoClose
 * durationArrowTop
+* valiDation
 
 // Format
 * formatDate

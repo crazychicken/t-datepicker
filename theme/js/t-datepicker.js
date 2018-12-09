@@ -2,7 +2,7 @@
 * Tuds tDatepicker
 * Copyright 2018 tuds - crazychicken
 * Licensed under: LICENSE
-* Version: v1.0.3
+* Version: v1.0.4
 */
 ;(function($){
   'use strict';
@@ -76,7 +76,8 @@
     fnDataEvent    : null,
     mergeDataEvent : false,
     // ### ###
-    dateDisabled : []
+    dateDisabled : [],
+    valiDation: false
   };
 
   var update_options;
@@ -486,14 +487,15 @@
 
 
     // Theme t-check-in && t-check-out default show for website
-    function setThemeCheckDate(pr_title, pr_class, pr_data_utc, pr_input, pr_fm_input) {
+    function setThemeCheckDate(pr_title, pr_class, pr_data_utc, pr_input, pr_fm_input, pr_requied) {
       return '<div class="t-dates t-date-'+pr_class+'">'+
       // setInfoTitle(pr_title, 't-date-info-title')
       settings.iconDate+
       '<label class="t-date-info-title">'+pr_title+'</label>'+
       showThemeDate(pr_class, pr_data_utc)+
       '</div>'+
-      '<input type="hidden" class="t-input-'+pr_class+'"'+' value="'+pr_fm_input+'" name="'+pr_input+'">'
+      '<input type="text" class="t-input t-input-'+pr_class+'"'+' value="'+pr_fm_input+'" name="'+pr_input+'"'+pr_requied+'>'
+      // '<input type="hidden" class="t-input-'+pr_class+'"'+' value="'+pr_fm_input+'" name="'+pr_input+'">'
       // +'<div class="datepicker"></div>'
     }
     function showThemeDate(pr_class, pr_data_utc) {
@@ -530,7 +532,7 @@
       if ( typeof(pr_date) === 'object' && pr_date !== null ) {
         return pr_date = convertDateUTC(pr_date)
       }
-      if ( typeof(pr_date) === 'string' && pr_date !== 'null' ) {
+      if ( typeof(pr_date) === 'string' && pr_date !== 'null' && pr_date != '') {
         var yyyy_mm_dd;
         if ( pr_date.indexOf('/') !== -1 ) { pr_date = pr_date.replace(/\//g, '-') }
         var dd = pr_date.split('-');
@@ -563,7 +565,8 @@
         }
         // Gọi sai format là return;
         if ( isNaN(new Date(yyyy_mm_dd)) ) {
-          return console.log("'Thank you for using t-datepicker. Please, check formatDate :'%c " + settings.formatDate + ' ', 'background: #f16d99; color: #fff');
+          console.log("'Thank you for using t-datepicker. Please, check formatDate :'%c " + settings.formatDate + ' ', 'background: #f16d99; color: #fff');
+          return;
         }
         return yyyy_mm_dd; // Convert String '25/06/2018' - '2018/06/25'
       }
@@ -613,9 +616,15 @@
         // console.log(getDay)
         getDay = convertFormatDf(getDay)
         var formatDate = showValueInput(getDay);
+        var required = '';
+        // Check validation HTML5 empty input
+        if ( settings.valiDation === true && formatDate === null) {
+          formatDate = ''
+          required = 'required'
+        }
         // console.log(getDay)
         getDay = convertDateUTC(getDay);
-        this_el.find('.t-'+e).html(setThemeCheckDate( label_title , e, getDay, Input, formatDate ))
+        this_el.find('.t-'+e).html(setThemeCheckDate( label_title , e, getDay, Input, formatDate, required ))
       })
 
       // Nếu không có data, data default sẽ là toDay và nextDays - null

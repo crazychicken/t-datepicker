@@ -1,8 +1,8 @@
 {
   "name": "t-datepicker",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "The tDatePicker JavaScript library lets you apply more than options and calender data.",
-  "homepage": "https://github.com/crazychicken/t-datepicker",
+  "homepage": "https://github.com/crazychicken/t-datepicker#readme",
   "main": "./public/theme/js/t-datepicker.min.js",
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.dev.js",
@@ -62,7 +62,6 @@
   "bugs": {
     "url": "https://github.com/crazychicken/t-datepicker/issues"
   },
-  "homepage": "https://github.com/crazychicken/t-datepicker#readme",
   "devDependencies": {
     "browser-sync": "^2.24.4",
     "converthtml": "^1.0.8",

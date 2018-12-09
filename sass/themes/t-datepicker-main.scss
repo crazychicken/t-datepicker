@@ -2,7 +2,7 @@
 * Tuds tDatepicker
 * Copyright 2018 tuds - crazychicken
 * Licensed under: LICENSE
-* Version: v1.0.3
+* Version: v1.0.4
 */
 $color-main    : #20c997;
 $label-special : #e91e63;
@@ -49,7 +49,7 @@ $white-default : #fff;
         background: $gray-default;
     }
 }
-.t-start, 
+.t-start,
 .t-end,
 .t-end-limit {
     color: $white-default;
@@ -118,6 +118,3 @@ $white-default : #fff;
         border-top-color: $color-main;
     }
 }
-
-
-
